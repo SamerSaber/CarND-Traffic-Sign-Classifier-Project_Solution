@@ -113,6 +113,6 @@ Here are the results of the prediction:
 | Vehicles over 3.5 metric tons prohibited			| Vehicles over 3.5 metric tons prohibited      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%.
 
 

@@ -70,7 +70,7 @@ My final model consisted of the following layers:
 * BATCH_SIZE = 150
 
 
-####4. Output Description
+####4. Approach taken for finding a solution and getting the validation set accuracy to be at least 0.93.
 
 My final model results were:
 

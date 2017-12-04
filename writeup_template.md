@@ -34,8 +34,8 @@ signs data set:
 
 ####1. Preprocessing
 
-* First step convert to gray scale image.
-* Then gray scale image normalization
+* First step convert to gray scale image because we are not interested in the color of the images we care about the features only.
+* Then gray scale image normalization to keep all the data on the same scale and to small range helps the training performance.
 
 
 ####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -45,16 +45,16 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x1 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, Valid padding, outputs 28x28x6 	|
+| Convolution 5x5     	| 1x1 stride, Valid padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
-| Convolution 3x3	    | 1x1 stride, Valid padding, outputs 10x10x96 	|
+| Convolution 5x5	    | 1x1 stride, Valid padding, outputs 10x10x96 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
-| Fully connected		| Input = 400. Output = 120 	|
+| Fully connected		| Input = 400. Output = 220 	|
 | RELU					|												|
 | Dropout					|											|
-| Fully connected		| Input = 120. Output = 84 	|
+| Fully connected		| Input = 220. Output = 84 	|
 | RELU					|												|
 | Dropout					|											|
 | Fully connected		| Input = 84. Output = 43 	|
@@ -79,6 +79,11 @@ My final model results were:
 * test set accuracy of 0.939
 
 
+* I started with the LeNet architecture existing in the lap but the validation accuracy wasn't good "seems like due to overfitting"
+* Added dropout layers to avoid the over fitting and enhanced the validation test accuracy.
+* Increased the number of the the output of the first fully connected layer to learn more features.
+* Increased the number of the epochs to increase the accuracy but with keeping in consideration to stop before the validation accuracy to decrease.
+ 
 ###Test a Model on New Images
 
 ####1. German traffic signs found on the web.
